@@ -7,7 +7,9 @@ var routes = require('./routes');
 
 var app = express();
 
-app.use(logger('dev'));
+app.set('trust proxy', 'loopback');
+
+app.use(logger('combined'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
