@@ -8,6 +8,9 @@ var router = express.Router();
 var request = require('request');
 
 var AUTH_URL = 'https://slack.com/api/oauth.access';
+router.get('/check', function(req, res, next) {
+  res.sendStatus(204);
+});
 router.post('/tokens', function(req, res, next) {
   var code = req.body.authorizationCode;
   if (!code) {
